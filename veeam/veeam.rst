@@ -87,7 +87,7 @@ The Veeam Backup Server is the main management component in the Veeam backup inf
 
    .. note::
 
-    The Unattend script will disable the Windows Firewall.
+    The Unattend script will disable the Windows Firewall. Please use Prism Console to turn off Windows Firewall on Public Network if you cannot RDP to your VeeamServer on the following steps.
 
 #. Select the *Initials*\ **-VeeamServer** VM and click **Power on**.
 
@@ -350,6 +350,22 @@ Deploying the AHV Backup Proxy
 
 Backing Up A VM
 +++++++++++++++
+
+.. note::
+
+  You can use the existed Veeam Backup Server and AHV Proxy Server to complete the following labs if you skip the step of **Deploying Veeam Backup Server** and **Deploying the AHV Backup Proxy**.
+
+**Veeam Backup Server**
+   - **VVM Name  :** VeeamServer
+   - **IP Address:** 10.42.105.208	 
+   - **Username  :** ntnxlab\\administrator
+   - **Password  :** nutanix/4u
+   
+**Veeam AHV Proxy Server**   
+   - **VM Name   :** VeeamAHVProxy
+   - **IP Address:** 10.42.105.190
+   - **Username  :** veeam
+   - **Password  :** nutanix/4u
 
 Veeam Backup & Replication backs up Nutanix AHV VMs at the image level, just like VMware vSphere and Microsoft Hyper-V VMs. The Backup Proxy communicates with Nutanix AHV to trigger a VM snapshot, retrieves VM data block by block from Storage Containers hosting VMs, compresses and deduplicates the data, and writes to the Backup Repository in Veeam’s proprietary format.
 
