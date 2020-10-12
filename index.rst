@@ -33,7 +33,7 @@ You will explore using veeam with Nutanix.
 What's New
 ++++++++++
 - Workshop updated for the following software versions:
-    - AOS & PC 5.11.2.x
+    - AOS 5.17.1.3 & PC 2020.09
 
 - Optional Lab Updates:
 
@@ -77,9 +77,9 @@ If provisioned from the marketing pool:
 
 For example:
 
-- **Cluster Name** - POC055
-- **Subnet** - 10.21.55.0
-- **Cluster IP** - 10.21.55.37
+- **Cluster Name** - POC105
+- **Subnet** - 10.42.105.0
+- **Cluster IP** - 10.42.105.37
 
 Throughout the Workshop there are multiple instances where you will need to substitute *XYZ* with the correct octet for your subnet, for example:
 
@@ -89,11 +89,11 @@ Throughout the Workshop there are multiple instances where you will need to subs
 
    * - IP Address
      - Description
-   * - 10.21.\ *XYZ*\ .37
+   * - 10.42.105.37
      - Nutanix Cluster Virtual IP
-   * - 10.21.\ *XYZ*\ .39
+   * - 10.42.105.39
      - **PC** VM IP, Prism Central
-   * - 10.21.\ *XYZ*\ .40
+   * - 10.42.105.51
      - **DC** VM IP, NTNXLAB.local Domain Controller
 
 Each cluster is configured with 2 VLANs which can be used for VMs:
@@ -107,13 +107,13 @@ Each cluster is configured with 2 VLANs which can be used for VMs:
     - VLAN
     - DHCP Scope
   * - Primary
-    - 10.21.\ *XYZ*\ .1/25
+    - 10.42.105.1/25
     - 0
-    - 10.21.\ *XYZ*\ .50-10.21.\ *XYZ*\ .124
+    - 10.42.105.60-10.21.105.125
   * - Secondary
-    - 10.21.\ *XYZ*\ .129/25
-    - *XYZ1*
-    - 10.21.\ *XYZ*\ .132-10.21.\ *XYZ*\ .253
+    - 10.42.105.129/25
+    - *1051*
+    - 10.42.105.130-10.21.105.250
 
 Credentials
 ...........
@@ -131,16 +131,16 @@ Credentials
      - Password
    * - Prism Element
      - admin
-     - *<Cluster Password>*
+     - **nx2Tech471!**
    * - Prism Central
      - admin
-     - *<Cluster Password>*
+     - **nx2Tech471!**
    * - Controller VM
      - nutanix
-     - *<Cluster Password>*
+     - **nx2Tech471!**
    * - Prism Central VM
      - nutanix
-     - *<Cluster Password>*
+     - **nx2Tech471!**
 
 Each cluster has a dedicated domain controller VM, **DC**, responsible for providing AD services for the **NTNXLAB.local** domain. The domain is populated with the following Users and Groups:
 
@@ -182,7 +182,7 @@ Lab Access User Credentials
 ...........................
 
 PHX Based Clusters:
-**Username:** PHX-POCxxx-User01 (up to PHX-POCxxx-User20), **Password:** *<Provided by Instructor>*
+**Username:** PHX-POC105-User01 (up to PHX-POC105-User20), **Password:** *<Provided by Instructor>*
 
 RTP Based Clusters:
 **Username:** RTP-POCxxx-User01 (up to RTP-POCxxx-User20), **Password:** *<Provided by Instructor>*
@@ -237,6 +237,6 @@ For RTP:
 Nutanix Version Info
 ++++++++++++++++++++
 
-- **AHV Version** - AHV 20170830.337
-- **AOS Version** - 5.11.2.3
-- **PC Version** - 5.11.2.1
+- **AHV Version** - AHV 20190916.253
+- **AOS Version** - 5.17.1.3
+- **PC Version** - 2020.09
